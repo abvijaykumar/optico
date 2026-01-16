@@ -1,0 +1,69 @@
+name: optico
+description: A modern local music player app with Spotify-like design.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Audio playback
+  just_audio: ^0.9.36
+  audio_service: ^0.18.12
+
+  # File handling
+  file_picker: ^6.1.1
+  path_provider: ^2.1.2
+  permission_handler: ^11.2.0
+
+  # Audio metadata
+  audiotagger: ^2.2.1
+  flutter_media_metadata: ^1.0.0+1
+
+  # State management
+  provider: ^6.1.1
+
+  # UI components
+  cupertino_icons: ^1.0.6
+  cached_network_image: ^3.3.1
+  flutter_svg: ^2.0.9
+  shimmer: ^3.0.0
+  palette_generator: ^0.3.3+3
+
+  # Storage
+  shared_preferences: ^2.2.2
+  sqflite: ^2.3.2
+  path: ^1.8.3
+
+  # Utilities
+  uuid: ^4.2.2
+  collection: ^1.18.0
+  rxdart: ^0.27.7
+  audio_session: ^0.1.18
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: Circular
+      fonts:
+        - asset: assets/fonts/CircularStd-Book.otf
+          weight: 400
+        - asset: assets/fonts/CircularStd-Medium.otf
+          weight: 500
+        - asset: assets/fonts/CircularStd-Bold.otf
+          weight: 700
