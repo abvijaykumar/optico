@@ -211,7 +211,7 @@ class _SearchScreenState extends State<SearchScreen> {
               child: Icon(
                 icon,
                 size: 60,
-                color: Colors.black.withOpacity(0.2),
+                color: Colors.black.withValues(alpha:0.2),
               ),
             ),
           ),

@@ -105,7 +105,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       decoration: BoxDecoration(
         color: AppTheme.cardGrey,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppTheme.primaryGreen.withOpacity(0.3)),
+        border: Border.all(color: AppTheme.primaryGreen.withValues(alpha:0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -396,7 +396,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
       subtitle: Text(subtitle, style: AppTheme.bodySmall),
       value: value,
       onChanged: onChanged,
-      activeColor: AppTheme.primaryGreen,
+      activeTrackColor: AppTheme.primaryGreen,
+      thumbColor: WidgetStateProperty.all(AppTheme.white),
     );
   }
 

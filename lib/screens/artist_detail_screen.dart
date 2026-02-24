@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/models.dart';
 import '../providers/providers.dart';
+import '../services/audio_player_service.dart';
 import '../theme/app_theme.dart';
 import '../widgets/widgets.dart';
 import 'album_detail_screen.dart';
@@ -33,7 +34,7 @@ class ArtistDetailScreen extends StatelessWidget {
               icon: Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.5),
+                  color: Colors.black.withValues(alpha:0.5),
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(Icons.arrow_back, size: 20),
@@ -81,7 +82,7 @@ class ArtistDetailScreen extends StatelessWidget {
                         child: Icon(
                           Icons.person_rounded,
                           size: 100,
-                          color: AppTheme.textGrey.withOpacity(0.5),
+                          color: AppTheme.textGrey.withValues(alpha:0.5),
                         ),
                       ),
               ),

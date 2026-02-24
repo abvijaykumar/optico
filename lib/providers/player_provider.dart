@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'package:just_audio/just_audio.dart';
 import '../models/models.dart';
 import '../services/services.dart';
 

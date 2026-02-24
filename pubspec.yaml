@@ -58,12 +58,11 @@ flutter:
     - assets/images/
     - assets/icons/
 
-  fonts:
-    - family: Circular
-      fonts:
-        - asset: assets/fonts/CircularStd-Book.otf
-          weight: 400
-        - asset: assets/fonts/CircularStd-Medium.otf
-          weight: 500
-        - asset: assets/fonts/CircularStd-Bold.otf
-          weight: 700
+  # To add custom fonts, place .otf/.ttf files in assets/fonts/ and uncomment:
+  # fonts:
+  #   - family: CustomFont
+  #     fonts:
+  #       - asset: assets/fonts/CustomFont-Regular.otf
+  #         weight: 400
+  #       - asset: assets/fonts/CustomFont-Bold.otf
+  #         weight: 700

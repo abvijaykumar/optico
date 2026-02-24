@@ -29,8 +29,8 @@ class SongTile extends StatelessWidget {
       color: Colors.transparent,
       child: InkWell(
         onTap: onTap,
-        splashColor: AppTheme.lightGrey.withOpacity(0.3),
-        highlightColor: AppTheme.lightGrey.withOpacity(0.2),
+        splashColor: AppTheme.lightGrey.withValues(alpha:0.3),
+        highlightColor: AppTheme.lightGrey.withValues(alpha:0.2),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: Row(

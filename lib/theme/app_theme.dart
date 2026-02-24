@@ -29,8 +29,8 @@ class AppTheme {
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
       colors: [
-        color.withOpacity(0.8),
-        color.withOpacity(0.4),
+        color.withValues(alpha:0.8),
+        color.withValues(alpha:0.4),
         darkGrey,
       ],
       stops: const [0.0, 0.3, 0.6],
@@ -132,7 +132,7 @@ class AppTheme {
         iconTheme: IconThemeData(color: white),
         titleTextStyle: titleLarge,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: cardGrey,
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -150,7 +150,7 @@ class AppTheme {
         activeTrackColor: white,
         inactiveTrackColor: lightGrey,
         thumbColor: white,
-        overlayColor: white.withOpacity(0.2),
+        overlayColor: white.withValues(alpha:0.2),
         trackHeight: 4,
         thumbShape: const RoundSliderThumbShape(
           enabledThumbRadius: 6,
@@ -254,7 +254,7 @@ class AppTheme {
           borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
         ),
       ),
-      dialogTheme: DialogTheme(
+      dialogTheme: DialogThemeData(
         backgroundColor: mediumGrey,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),

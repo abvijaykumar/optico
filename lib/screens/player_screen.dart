@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide RepeatMode;
 import 'package:provider/provider.dart';
 import '../providers/providers.dart';
-import '../services/services.dart';
+import '../services/audio_player_service.dart';
 import '../theme/app_theme.dart';
 import '../widgets/widgets.dart';
 
