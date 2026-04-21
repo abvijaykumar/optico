@@ -127,3 +127,20 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Node / frontend
+node_modules/
+dist/
+.vite/
+*.local
+
+# OS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Local env
+*.db
+*.sqlite*

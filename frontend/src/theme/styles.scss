@@ -1,0 +1,97 @@
+@use "@carbon/react";
+@use "@carbon/styles/scss/themes";
+@use "@carbon/styles/scss/theme" with ($theme: themes.$g100);
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--cds-background);
+  color: var(--cds-text-primary);
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+.optico-layout {
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  grid-template-rows: 48px 1fr;
+  height: 100vh;
+  grid-template-areas:
+    "header header"
+    "nav    main";
+}
+
+.optico-header {
+  grid-area: header;
+}
+
+.optico-nav {
+  grid-area: nav;
+  border-right: 1px solid var(--cds-border-subtle);
+  padding-block: 1rem;
+  overflow-y: auto;
+}
+
+.optico-main {
+  grid-area: main;
+  padding: 1.25rem 2rem 3rem;
+  overflow-y: auto;
+}
+
+.optico-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-block: 1rem 1.5rem;
+}
+
+.optico-kpi-card {
+  background: var(--cds-layer);
+  border: 1px solid var(--cds-border-subtle);
+  padding: 1rem 1.25rem;
+  border-radius: 2px;
+}
+
+.optico-kpi-card__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--cds-text-secondary);
+}
+
+.optico-kpi-card__value {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-top: 0.25rem;
+}
+
+.optico-section {
+  margin-block: 2rem;
+}
+
+.optico-section h3 {
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.optico-badge-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.optico-evidence {
+  background: var(--cds-layer);
+  padding: 0.75rem;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  white-space: pre-wrap;
+  max-height: 200px;
+  overflow: auto;
+}
