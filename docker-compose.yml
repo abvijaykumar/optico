@@ -1,0 +1,49 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    image: optico/backend:dev
+    container_name: optico-backend
+    env_file:
+      - ./backend/.env.example
+    environment:
+      NEO4J_URI: bolt://neo4j:7687
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8000:8000"
+    depends_on:
+      - neo4j
+      - redis
+
+  frontend:
+    build:
+      context: ./frontend
+    image: optico/frontend:dev
+    container_name: optico-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  neo4j:
+    image: neo4j:5.25-community
+    container_name: optico-neo4j
+    environment:
+      NEO4J_AUTH: neo4j/optico-dev-password
+      NEO4J_PLUGINS: '["apoc"]'
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - neo4j-data:/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: optico-redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  neo4j-data:
