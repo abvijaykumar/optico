@@ -83,6 +83,14 @@ export const api = {
   changeRadar: () => request<Record<string, unknown>>("/dashboards/change-radar"),
   infraHealth: () => request<Record<string, unknown>>("/dashboards/infra-health"),
   cost: () => request<Record<string, unknown>>("/dashboards/cost"),
+  security: () => request<Record<string, unknown>>("/dashboards/security"),
+  federationSummary: () => request<Record<string, unknown>>("/dashboards/federation"),
+  predictive: () => request<Record<string, unknown>>("/dashboards/predictive"),
+
+  // federation / tenancy / compliance
+  listClusters: () => request<Array<Record<string, unknown>>>("/federation/clusters"),
+  listTenants: () => request<Array<Record<string, unknown>>>("/federation/tenants"),
+  fedramp: () => request<Record<string, unknown>>("/federation/compliance/fedramp"),
 
   // governance
   listPolicies: () => request<Array<Record<string, unknown>>>("/governance/policies"),

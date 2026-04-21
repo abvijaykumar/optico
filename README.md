@@ -182,16 +182,35 @@ The Carbon console picks up new agents automatically via the
 
 ## Phase alignment
 
-| Phase | Weeks  | Shipped in this repo                                |
-| ----- | ------ | --------------------------------------------------- |
-| 0     | 1–8    | Full substrate (orchestrator, MCP, KG, HITL, eval)  |
-| 1     | 9–20   | Triage, Correlation, RCA, IC, Remediation, PIR, KEDB|
-| 2     | 21–32  | ChangeRiskAgent + ReleaseAgent scaffolds            |
-| 3     | 33–48  | SLO + Capacity agent scaffolds; K8s MCP             |
-| 4     | 49–60  | RoI² dashboards + governance console                |
+| Phase | Weeks  | Shipped in this repo                                                |
+| ----- | ------ | ------------------------------------------------------------------- |
+| 0     | 1–8    | Full substrate (orchestrator, MCP vault, KG, HITL, eval, governance) |
+| 1     | 9–20   | Triage, Correlation, RCA, IC, Remediation, PIR, KEDB                |
+| 2     | 21–32  | ChangeRisk, Release, CAB, Canary, Rollback, ReleaseNotes, FeatureFlagGov, DeploymentDrift + mcp-gitops/flags/iac |
+| 3     | 33–48  | **SRE**: SLO, Capacity, Toil, Chaos, DependencyMap, ReliabilityScore, RunbookAuthoring, ObservabilityCoverage. **Hardware**: Health, DiskFailure, Firmware, NetworkFabric, PowerThermal. **Platform**: CloudOptimizer, IaCDrift, OSPatching, Storage, NetworkPolicy, Certificate, Backup/DR. **Middleware**: DBA, MessageBroker, APIGateway, ServiceMesh, Cache, ContainerRuntime, LoadBalancer. **Application**: APM, LogAnalysis, DistributedTrace, RUM, Synthetic, FeaturePerf, SessionReplay. + mcp-aws/azure/gcp/db/messaging/hardware/network/k8s |
+| 4     | 49–60  | MajorIncidentPredictor, FinOps, Compliance, SecurityCorrelation, KGMaintenance, Documentation + mcp-security/finops + **multi-cluster federation + tenant isolation + FedRAMP-ready enclave** |
 
 Each phase extends the same registry and MCP vault — no bespoke
-stacks per agent.
+stacks per agent. The console exposes every addition via generic
+views (Agent Roster, Tool Vault, Governance) plus dedicated pages
+for Full-stack Health, Risk Posture, Predictive Ops, Federation &
+Tenants, and FedRAMP Compliance.
+
+### Agent count
+
+~45 specialist agents across 6 workstreams:
+
+* **incident** — Triage, Correlation, RCA, Commander, Remediation, PIR, KEDB
+* **release** — ChangeRisk, Release, CAB, Canary, Rollback, ReleaseNotes, FeatureFlagGov, DeploymentDrift
+* **sre** — SLO, Capacity, Toil, Chaos, DependencyMap, ReliabilityScore, RunbookAuthoring, ObservabilityCoverage
+* **stack** — 24 agents across Hardware / Platform / Middleware / Application
+* **analytics** — MajorIncidentPredictor, FinOps, Compliance, SecurityCorrelation, KGMaintenance, Documentation
+
+### MCP vault
+
+20 registered servers covering Observability, ITSM, Comms, Runbook,
+Knowledge, CI/CD, GitOps, FeatureFlags, IaC, AWS, Azure, GCP, K8s,
+DB, Messaging, Hardware, Network, Security, Analytics, FinOps.
 
 ## License
 

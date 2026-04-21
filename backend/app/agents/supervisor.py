@@ -185,6 +185,13 @@ class Supervisor:
             }
         )
         state["kedb"] = kedb_run
+
+        # Phase 4 — major-incident predictor as a post-incident signal.
+        try:
+            predictor = agent_registry.get("major-incident-predictor")
+            state["predictor"] = await predictor.run({"service": state["alert"].get("service")})
+        except KeyError:
+            pass
         return state
 
     # -- public entry -----------------------------------------------------
@@ -202,6 +209,7 @@ class Supervisor:
             "remediation": _ser(final.get("remediation")),
             "pir": _ser(final.get("pir")),
             "kedb": _ser(final.get("kedb")),
+            "predictor": _ser(final.get("predictor")),
         }
 
 

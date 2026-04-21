@@ -47,3 +47,38 @@ async def test_supervisor_end_to_end():
     )
     assert result["incident"] is not None
     assert result["triage"] is not None
+    # Phase 4 predictor should have been chained after KEDB.
+    assert result["predictor"] is not None
+
+
+@pytest.mark.asyncio
+async def test_phase4_agents_runnable():
+    for name in (
+        "major-incident-predictor",
+        "finops-agent",
+        "compliance-agent",
+        "sec-correlation-agent",
+        "kg-maintenance-agent",
+        "documentation-agent",
+    ):
+        agent = agent_registry.get(name)
+        run = await agent.run({})
+        assert run.status == "succeeded"
+        assert run.recommendation is not None
+
+
+@pytest.mark.asyncio
+async def test_stack_agents_runnable():
+    for name in (
+        "hw-health-agent",
+        "disk-failure-agent",
+        "dba-agent",
+        "broker-agent",
+        "apm-agent",
+        "trace-agent",
+        "cloud-optimizer-agent",
+        "iac-drift-agent",
+    ):
+        agent = agent_registry.get(name)
+        run = await agent.run({})
+        assert run.status == "succeeded"

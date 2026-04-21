@@ -13,13 +13,9 @@ import {
   Theme,
 } from "@carbon/react";
 import {
-  Activity,
   Events,
-  Chip,
   ChartLineData,
   GroupResource,
-  PolicyIdentity,
-  Network_3,
   Notification,
   Search,
   UserAvatar,
@@ -56,102 +52,65 @@ export default function Layout({ children }: { children: ReactNode }) {
             >
               <SideNavItems>
                 <SideNavMenu title="Dashboards" renderIcon={ChartLineData} defaultExpanded>
-                  <SideNavMenuItem
-                    element={NavLink as any}
-                    to="/dashboard/roi"
-                    isActive={is("/dashboard/roi")}
-                  >
+                  <SideNavMenuItem element={NavLink as any} to="/dashboard/roi" isActive={is("/dashboard/roi")}>
                     RoI² Scorecard
                   </SideNavMenuItem>
-                  <SideNavMenuItem
-                    element={NavLink as any}
-                    to="/dashboard/live-ops"
-                    isActive={is("/dashboard/live-ops")}
-                  >
+                  <SideNavMenuItem element={NavLink as any} to="/dashboard/live-ops" isActive={is("/dashboard/live-ops")}>
                     Live Ops
                   </SideNavMenuItem>
-                  <SideNavMenuItem
-                    element={NavLink as any}
-                    to="/dashboard/reliability"
-                    isActive={is("/dashboard/reliability")}
-                  >
+                  <SideNavMenuItem element={NavLink as any} to="/dashboard/reliability" isActive={is("/dashboard/reliability")}>
                     Reliability Cockpit
                   </SideNavMenuItem>
-                  <SideNavMenuItem
-                    element={NavLink as any}
-                    to="/dashboard/change-radar"
-                    isActive={is("/dashboard/change-radar")}
-                  >
+                  <SideNavMenuItem element={NavLink as any} to="/dashboard/change-radar" isActive={is("/dashboard/change-radar")}>
                     Change Radar
                   </SideNavMenuItem>
-                  <SideNavMenuItem
-                    element={NavLink as any}
-                    to="/dashboard/infra"
-                    isActive={is("/dashboard/infra")}
-                  >
+                  <SideNavMenuItem element={NavLink as any} to="/dashboard/infra" isActive={is("/dashboard/infra")}>
                     Infra Health
                   </SideNavMenuItem>
-                  <SideNavMenuItem
-                    element={NavLink as any}
-                    to="/dashboard/cost"
-                    isActive={is("/dashboard/cost")}
-                  >
+                  <SideNavMenuItem element={NavLink as any} to="/dashboard/cost" isActive={is("/dashboard/cost")}>
                     Cost & Waste
+                  </SideNavMenuItem>
+                  <SideNavMenuItem element={NavLink as any} to="/dashboard/security" isActive={is("/dashboard/security")}>
+                    Risk Posture
+                  </SideNavMenuItem>
+                  <SideNavMenuItem element={NavLink as any} to="/dashboard/predictive" isActive={is("/dashboard/predictive")}>
+                    Predictive
                   </SideNavMenuItem>
                 </SideNavMenu>
 
                 <SideNavMenu title="Operations" renderIcon={Events} defaultExpanded>
-                  <SideNavMenuItem
-                    element={NavLink as any}
-                    to="/ops/incidents"
-                    isActive={is("/ops/incidents")}
-                  >
+                  <SideNavMenuItem element={NavLink as any} to="/ops/incidents" isActive={is("/ops/incidents")}>
                     Incident Console
                   </SideNavMenuItem>
-                  <SideNavMenuItem
-                    element={NavLink as any}
-                    to="/ops/hitl"
-                    isActive={is("/ops/hitl")}
-                  >
+                  <SideNavMenuItem element={NavLink as any} to="/ops/hitl" isActive={is("/ops/hitl")}>
                     HITL Queue
                   </SideNavMenuItem>
-                  <SideNavMenuItem
-                    element={NavLink as any}
-                    to="/ops/runbooks"
-                    isActive={is("/ops/runbooks")}
-                  >
+                  <SideNavMenuItem element={NavLink as any} to="/ops/runbooks" isActive={is("/ops/runbooks")}>
                     Runbooks & KEDB
+                  </SideNavMenuItem>
+                  <SideNavMenuItem element={NavLink as any} to="/ops/stack" isActive={is("/ops/stack")}>
+                    Full-stack Health
                   </SideNavMenuItem>
                 </SideNavMenu>
 
                 <SideNavMenu title="Platform" renderIcon={GroupResource} defaultExpanded>
-                  <SideNavMenuItem
-                    element={NavLink as any}
-                    to="/platform/agents"
-                    isActive={is("/platform/agents")}
-                  >
+                  <SideNavMenuItem element={NavLink as any} to="/platform/agents" isActive={is("/platform/agents")}>
                     Agent Roster
                   </SideNavMenuItem>
-                  <SideNavMenuItem
-                    element={NavLink as any}
-                    to="/platform/tools"
-                    isActive={is("/platform/tools")}
-                  >
+                  <SideNavMenuItem element={NavLink as any} to="/platform/tools" isActive={is("/platform/tools")}>
                     MCP Tool Vault
                   </SideNavMenuItem>
-                  <SideNavMenuItem
-                    element={NavLink as any}
-                    to="/platform/kg"
-                    isActive={is("/platform/kg")}
-                  >
+                  <SideNavMenuItem element={NavLink as any} to="/platform/kg" isActive={is("/platform/kg")}>
                     Knowledge Graph
                   </SideNavMenuItem>
-                  <SideNavMenuItem
-                    element={NavLink as any}
-                    to="/platform/governance"
-                    isActive={is("/platform/governance")}
-                  >
+                  <SideNavMenuItem element={NavLink as any} to="/platform/governance" isActive={is("/platform/governance")}>
                     Governance & Audit
+                  </SideNavMenuItem>
+                  <SideNavMenuItem element={NavLink as any} to="/platform/federation" isActive={is("/platform/federation")}>
+                    Federation & Tenants
+                  </SideNavMenuItem>
+                  <SideNavMenuItem element={NavLink as any} to="/platform/compliance" isActive={is("/platform/compliance")}>
+                    Compliance (FedRAMP)
                   </SideNavMenuItem>
                 </SideNavMenu>
               </SideNavItems>

@@ -123,3 +123,40 @@ async def cost() -> dict:
             {"service": "notifications", "delta_pct": 0.09, "likely_cause": "retention bump"},
         ],
     }
+
+
+@router.get("/security")
+async def security() -> dict:
+    return {
+        "vulns_critical": 2,
+        "vulns_high": 18,
+        "policy_violations": 3,
+        "mttr_minutes_sev1": 41,
+        "audit_findings_open": 4,
+    }
+
+
+@router.get("/federation")
+async def federation_summary() -> dict:
+    from app.federation.federation import federation
+    from app.tenancy.tenants import tenants
+    return {
+        "clusters": [c.to_dict() for c in federation.list()],
+        "tenants": [t.to_dict() for t in tenants.list()],
+    }
+
+
+@router.get("/predictive")
+async def predictive() -> dict:
+    return {
+        "major_incident_prob_next_4h": 0.18,
+        "top_drivers": [
+            {"service": "checkout", "driver": "release_recency", "weight": 0.42},
+            {"service": "orders-db", "driver": "high_latency", "weight": 0.33},
+        ],
+        "capacity_projection_7d": {
+            "checkout": 0.62,
+            "orders-api": 0.71,
+            "orders-db": 0.84,
+        },
+    }

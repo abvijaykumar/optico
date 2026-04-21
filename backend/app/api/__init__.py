@@ -4,6 +4,7 @@ from app.api.routes import (
     agents,
     changes,
     dashboards,
+    federation,
     governance,
     hitl,
     incidents,
@@ -22,3 +23,4 @@ api_router.include_router(kg.router)
 api_router.include_router(runbooks.router)
 api_router.include_router(dashboards.router)
 api_router.include_router(governance.router)
+api_router.include_router(federation.router)
